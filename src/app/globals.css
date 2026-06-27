@@ -1,26 +1,129 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-roboto);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-roboto);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* SSTA brand colors */
+  --color-ssta-red: #A32020;
+  --color-ssta-red-dark: #7F1818;
+  --color-ssta-gold: #C89B3C;
+  --color-ssta-steel: #9E9B9B;
+  --color-ssta-off-white: #F7F6F3;
+  --color-ssta-dark: #1F2937;
+  --color-ssta-body: #4B5563;
+  --color-ssta-border: #E5E7EB;
+  --color-ssta-footer: #222222;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #F7F6F3;
+  --foreground: #1F2937;
+  --card: #ffffff;
+  --card-foreground: #1F2937;
+  --popover: #ffffff;
+  --popover-foreground: #1F2937;
+  --primary: #A32020;
+  --primary-foreground: #ffffff;
+  --secondary: #F7F6F3;
+  --secondary-foreground: #1F2937;
+  --muted: #F7F6F3;
+  --muted-foreground: #9E9B9B;
+  --accent: #C89B3C;
+  --accent-foreground: #1F2937;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #A32020;
+  --radius: 0.75rem;
+  --sidebar: #F7F6F3;
+  --sidebar-foreground: #1F2937;
+  --sidebar-primary: #A32020;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #F7F6F3;
+  --sidebar-accent-foreground: #1F2937;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #A32020;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-roboto), system-ui, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F6F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #A32020;
+  border-radius: 3px;
+}
+
+/* Section transitions */
+section {
+  overflow: hidden;
+}
+
+/* Gold accent line utility */
+.gold-line::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: #C89B3C;
+  margin-top: 12px;
+}
+
+.gold-line-center::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: #C89B3C;
+  margin: 12px auto 0;
 }
