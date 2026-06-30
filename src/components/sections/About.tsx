@@ -42,10 +42,10 @@ function Counter({
 }
 
 const stats = [
-  { value: 5, suffix: '+', label: 'Retired Army Instructors' },
-  { value: 500, suffix: '+', label: 'Trained Graduates' },
-  { value: 8, suffix: '', label: 'Northeast States Served' },
-  { value: 96, suffix: '%', label: 'Placement Rate' },
+  { value: 5, suffix: '+', label: 'Ex-Army Instructors' },
+  { value: 500, suffix: '+', label: 'Trained Personnel' },
+  { value: 6, suffix: '', label: 'Northeast States Served' },
+  { value: 8, suffix: '+', label: 'Years' },
 ];
 
 export default function About() {
@@ -124,7 +124,7 @@ export default function About() {
             {/* Inline highlights */}
             <div className='grid grid-cols-2 gap-4'>
               {[
-                'Retired Army Instructors',
+                'Ex-Army Instructors',
                 'Hands-on Field Training',
                 'Industry Certifications',
                 'Placement Support',
